@@ -32,7 +32,7 @@ void init()
 	serializeJson(root, jsonString);
 
 	fileSetContent(MQTT_CONF_FILENAME, jsonString);
-	const char* jsonString2 = fileGetContent(MQTT_CONF_FILENAME).c_str();
+	String jsonString2 = fileGetContent(MQTT_CONF_FILENAME);
 
 	StaticJsonDocument<ConfigJsonBufferSize> root2;
 	DeserializationError error = deserializeJson(root2,jsonString2);
